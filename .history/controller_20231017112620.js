@@ -53,7 +53,7 @@ exports.tambahMahasiswa = function (req, res) {
   );
 };
 
-// mengubah data berdasarkan id
+// mengubah data bersarkan id
 exports.ubahMahasiswa = function (req, res) {
   var id = req.body.id_mahasiswa;
   var nim = req.body.nim;
@@ -72,4 +72,3 @@ exports.ubahMahasiswa = function (req, res) {
     }
   );
 };
-

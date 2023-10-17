@@ -53,7 +53,7 @@ exports.tambahMahasiswa = function (req, res) {
   );
 };
 
-// mengubah data berdasarkan id
+// mengubah data bersarkan id
 exports.ubahMahasiswa = function (req, res) {
   var id = req.body.id_mahasiswa;
   var nim = req.body.nim;
@@ -62,7 +62,7 @@ exports.ubahMahasiswa = function (req, res) {
 
   connection.query(
     "UPDATE mahasiswa SET nim = ?,nama = ?, jurusan=? WHERE id_mahasiswa = ?",
-    [nim, nama, jurusan, id],
+    [nim, nama, jurusan, id_mahasiswa],
     (error, rows, fields) => {
       if (error) {
         console.log(error);
@@ -72,4 +72,3 @@ exports.ubahMahasiswa = function (req, res) {
     }
   );
 };
-

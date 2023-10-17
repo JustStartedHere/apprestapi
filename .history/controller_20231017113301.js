@@ -73,3 +73,4 @@ exports.ubahMahasiswa = function (req, res) {
   );
 };
 
+// menghapus data berdasarkan id
