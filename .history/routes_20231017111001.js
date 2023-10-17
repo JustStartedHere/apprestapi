@@ -7,5 +7,5 @@ module.exports = function (app) {
   app.route("/").get(jsonku.index);
   app.route('/tampil').get(jsonku.tampilsemuamahasiswa);
   app.route('/tampil/:id').get(jsonku.tampilberdasarkanID);
-  app.route('/tambah').post(jsonku.tambahMahasiswa);
+  app.route('/tambah').get(jsonku.tambahMahasiswa);
 };

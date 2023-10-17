@@ -40,15 +40,15 @@ exports.tambahMahasiswa = function (req, res) {
   var nama = req.body.nama;
   var jurusan = req.body.jurusan;
 
-  connection.query(
-    "INSERT INTO mahasiswa (nim,nama,jurusan) VALUES (?,?,?)",
-    [nim, nama, jurusan],
-    (error, rows, fields) => {
-      if (error) {
-        console.log(error);
-      } else {
-        response.ok(`Berhasil menambah data mahasiswa ${nama}`, res);
-      }
+  connection.query("INSERT INTO mahasiswa (nim,nama,jurusan) VALUES (?,?,?)", [
+    nim,
+    nama,
+    jurusan,
+  ],(error,rows,fields)=>{
+    if (error) {
+      console.log(error);
+    } else {
+      response.ok(`Berhasil menambah data mahasiswa ${nama}`, res);
     }
-  );
+  });
 };
