@@ -81,7 +81,7 @@ exports.hapusMahasiswa = function (req, res) {
     "DELETE FROM mahasiswa WHERE id_mahasiswa = ?",
     [id],
     (error, rows, fields) => {
-      console.log(rows);
+      console.log(rows['changedRows']);
       if (error) {
         console.log(error);
       } else {
