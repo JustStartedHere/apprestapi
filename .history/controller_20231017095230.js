@@ -10,11 +10,8 @@ exports.index = function (req, res) {
 // menampilkan semua data mahasiswa
 exports.tampilsemuamahasiswa = function (req, res) {
   connection.query("SELECT * FROM mahasiswa", function (error, rows, fields) {
-    if (error) {
-      console.log(error);
-    } else {
-      response.ok(rows, res);
-    }
+    if (error) throw console.log(error);
+    response.ok(rows, res);
   });
 };
 
@@ -22,7 +19,7 @@ exports.tampilsemuamahasiswa = function (req, res) {
 exports.tampilberdasarkanID = function (req, res) {
   let id = req.params.id;
   connection.query(
-    "SELECT * FROM mahasiswa WHERE id_mahasiswa=?",
+    "SELECT * FROM mahasiswa WHERE id_mahasiswxa=?",
     [id],
     (error, rows, fields) => {
       if (error) {

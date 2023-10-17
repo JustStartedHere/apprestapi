@@ -22,7 +22,7 @@ exports.tampilsemuamahasiswa = function (req, res) {
 exports.tampilberdasarkanID = function (req, res) {
   let id = req.params.id;
   connection.query(
-    "SELECT * FROM mahasiswa WHERE id_mahasiswa=?",
+    "SELECT * FROM mahasiswa WHERE id_mahasiswxa=?",
     [id],
     (error, rows, fields) => {
       if (error) {
