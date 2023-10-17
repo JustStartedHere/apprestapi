@@ -11,6 +11,7 @@ exports.index = function (req, res) {
 exports.tampilsemuamahasiswa = function (req, res) {
   connection.query("SELECT * FROM mahasiswa", function (error, rows, fields) {
     if (error) throw connection.log(error);
+    
     response.ok(rows, res);
   });
 };
