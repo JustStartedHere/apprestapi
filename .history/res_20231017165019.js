@@ -15,14 +15,14 @@ exports.ok = function (values, res) {
 exports.oknested = function (values, res) {
   // lakukan akumulasi
 
-  //! BISA CARA INI
+  // BISA CARA INI
   // const hasil = values.reduce(function(akumulasikan, item){
   // akumulasikan[item.nama] = akumulasikan[item.nama]||[];
   // akumulasikan[item.nama].push(item);
   // return akumulasikan
   // }, Object.create(null));
 
-  //! BISA CARA INI
+  // BISA CARA INI
   const hasil = values.reduce(function (akumulasikan, item) {
     if (akumulasikan[item.nama]) {
       // buatlah variable group nama mahasiswa
@@ -41,7 +41,7 @@ exports.oknested = function (values, res) {
     return akumulasikan;
   }, Object.create(null));
 
-  //! BISA CARA INI
+  // BISA CARA INI
   // const hasil = values.reduce((akumulasikan, item) => {
   //   // tentukan key group
   //   if (akumulasikan[item.nama]) {
@@ -60,7 +60,7 @@ exports.oknested = function (values, res) {
   //   }
   //   return akumulasikan;
   // }, {});
-  
+
   var data = {
     status: 200,
     values: hasil,

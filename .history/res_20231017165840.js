@@ -60,7 +60,7 @@ exports.oknested = function (values, res) {
   //   }
   //   return akumulasikan;
   // }, {});
-  
+
   var data = {
     status: 200,
     values: hasil,

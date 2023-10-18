@@ -14,39 +14,17 @@ exports.ok = function (values, res) {
 // response untuk nested matakuliah
 exports.oknested = function (values, res) {
   // lakukan akumulasi
-
-  //! BISA CARA INI
   // const hasil = values.reduce(function(akumulasikan, item){
-  // akumulasikan[item.nama] = akumulasikan[item.nama]||[];
-  // akumulasikan[item.nama].push(item);
-  // return akumulasikan
+  //   akumulasikan[item.nama] = akumulasikan[item.nama]||[];
+  //   akumulasikan[item.nama].push(item);
+  //   return akumulasikan
   // }, Object.create(null));
 
-  //! BISA CARA INI
-  const hasil = values.reduce(function (akumulasikan, item) {
-    if (akumulasikan[item.nama]) {
-      // buatlah variable group nama mahasiswa
-      const group = akumulasikan[item.nama];
-      // cek jika isi array adalah matakuliah
-      if (Array.isArray(group.matakuliah)) {
-        
-        // tambahkan value ke dalam group matakuliah
-        group.matakuliah.push(item.matakuliah);
-      } else {
-        group.matakuliah = [group.matakuliah, item.matakuliah];
-      }
-    } else {
-      akumulasikan[item.nama] = item;
-    }
-    return akumulasikan;
-  }, Object.create(null));
-
-  //! BISA CARA INI
-  // const hasil = values.reduce((akumulasikan, item) => {
+  const hasil = values.reduce((akumulasikan, item) => {
   //   // tentukan key group
   //   if (akumulasikan[item.nama]) {
   //     // buatlah variable group nama mahasiswa
-  //     const group = akumulasikan[item.nama];
+  //     const group = akumulasikan[item].nama;
 
   //     // cek jika isi array adalah matakuliah
   //     if (Array.isArray(group.matakuliah)) {
@@ -59,8 +37,8 @@ exports.oknested = function (values, res) {
   //     akumulasikan[item.nama] = item;
   //   }
   //   return akumulasikan;
-  // }, {});
-  
+  } , Object.create(null));
+
   var data = {
     status: 200,
     values: hasil,
