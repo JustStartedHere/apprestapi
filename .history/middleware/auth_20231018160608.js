@@ -18,7 +18,8 @@ exports.registrasi = function (req, res) {
 
   var query = "SELECT email FROM ?? WHERE ?? = ?";
   var table = ["user", "email", post.email];
-  
+  console.log(query);
+
   query = mysql.format(query, table);
   connection.query(query, table, (error, rows) => {
     if (error) {
