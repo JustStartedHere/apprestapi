@@ -58,7 +58,7 @@ exports.login = function (req, res) {
     if (error) {
       console.log(error);
     } else {
-      if (rows.length == 1) {
+      if (rows == 1) {
         var token = jwt.sign({ rows }, config.secret, { expiresIn: 1440 });
         id_user = rows[0].id;
 
@@ -84,13 +84,7 @@ exports.login = function (req, res) {
             });
           }
         });
-      } else {
-        res.json({ error: true, message: "Email atau password salah!" });
       }
     }
   });
-};
-
-exports.halamanrahasia = function (req, res) {
-  response.ok("Berhasil Halaman ini hanya untuk user dengan role 2 !",res);
 };

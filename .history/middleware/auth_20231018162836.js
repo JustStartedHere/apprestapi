@@ -55,10 +55,10 @@ exports.login = function (req, res) {
 
   query = mysql.format(query, table);
   connection.query(query, (error, rows) => {
-    if (error) {
-      console.log(error);
-    } else {
-      if (rows.length == 1) {
+      if (error) {
+          console.log(error);
+        } else {
+            if (rows.length == 1) {
         var token = jwt.sign({ rows }, config.secret, { expiresIn: 1440 });
         id_user = rows[0].id;
 
@@ -89,8 +89,4 @@ exports.login = function (req, res) {
       }
     }
   });
-};
-
-exports.halamanrahasia = function (req, res) {
-  response.ok("Berhasil Halaman ini hanya untuk user dengan role 2 !",res);
 };
